@@ -1,4 +1,4 @@
-public with sharing class Feature {
+public without sharing class Feature {
 
 	public static Boolean PersonAccounts{
 		get{
