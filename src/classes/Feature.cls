@@ -47,23 +47,22 @@ public without sharing class Feature {
 	public static String instancePodName {
 		get {
 			String baseURL =  URL.getSalesforceBaseUrl().toExternalForm();
-            String pod = '';
+            		String pod = '';
 			// this means a community url
-	        if (baseURL.contains('force')) {
-	            String[] urlStringArray = baseURL.split('\\.');
-	            if(urlStringArray != null && urlStringArray.size() > 1) {
-	                   pod = urlStringArray[1];   
-	            }
-	        } 
-	        // this means a standard url
-	        else {
-	        	String[] urlStringArray = baseURL.split('\\.');
-	            
-	            if(urlStringArray != null && urlStringArray.size() > 1) {
-	                   pod = urlStringArray[1];   
-	            }
-	        }
-	        return pod;
+		        if (baseURL.contains('force')) {
+		            String[] urlStringArray = baseURL.split('\\.');
+		            if(urlStringArray != null && urlStringArray.size() > 1) {
+		                   pod = urlStringArray[1];   
+		            }
+		        } 
+		        // this means a standard url
+		        else {
+		        	String[] urlStringArray = baseURL.split('\\.');
+		        	if(urlStringArray != null && urlStringArray.size() > 1) {
+		                   pod = urlStringArray[1];   
+		            }
+		        }
+		        return pod;
 		}
 		private set;
 	}
