@@ -42,5 +42,16 @@ private class FeatureTest {
 		Test.stopTest();
 	}
 
+	private static testMethod void test_InstancePodName(){
+		String baseUrl = URL.getSalesforceBaseUrl().toExternalForm();
+
+
+		Test.startTest();
+
+		system.assertEquals(b, baseUrl.contains(Feature.instancePodName));
+
+		Test.stopTest();
+	}
+
 
 }
