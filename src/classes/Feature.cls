@@ -44,26 +44,12 @@ public without sharing class Feature {
 	* Returns a pod instance for your org
 	* Example: returns na2 if your instance points to https://na2.salesforce.com
 	*/
-	public static String instancePodName {
+	public static String InstanceName {
 		get {
-			String baseURL =  URL.getSalesforceBaseUrl().toExternalForm();
-            String pod = '';
-			// this means a community url
-	        if (baseURL.contains('force')) {
-	            String[] urlStringArray = baseURL.split('\\.');
-	            if(urlStringArray != null && urlStringArray.size() > 1) {
-	                   pod = urlStringArray[1];   
-	            }
-	        } 
-	        // this means a standard url
-	        else {
-	        	String[] urlStringArray = baseURL.split('\\.');
-	            
-	            if(urlStringArray != null && urlStringArray.size() > 1) {
-	                   pod = urlStringArray[1];   
-	            }
-	        }
-	        return pod;
+			if (InstanceName == null) {
+				InstanceName = [SELECT InstanceName FROM Organization].InstanceName;
+			}
+			return InstanceName;
 		}
 		private set;
 	}

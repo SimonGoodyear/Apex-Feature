@@ -48,7 +48,7 @@ private class FeatureTest {
 
 		Test.startTest();
 
-		system.assertEquals(true, baseUrl.contains(Feature.instancePodName));
+		system.assertEquals(true, baseUrl.containsIgnoreCase(Feature.InstanceName));
 
 		Test.stopTest();
 	}
