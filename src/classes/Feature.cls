@@ -42,7 +42,7 @@ public without sharing class Feature {
 
 	/*
 	* Returns a pod instance for your org
-	* Example: returns na2 if your instance points to https://na2.salesforce.com
+	* Example: returns NA2 if your instance points to https://na2.salesforce.com
 	*/
 	public static String InstanceName {
 		get {
