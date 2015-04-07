@@ -40,5 +40,19 @@ public without sharing class Feature {
 		private set;
 	}
 
+	/*
+	* Returns a pod instance for your org
+	* Example: returns NA2 if your instance points to https://na2.salesforce.com
+	*/
+	public static String InstanceName {
+		get {
+			if (InstanceName == null) {
+				InstanceName = [SELECT InstanceName FROM Organization].InstanceName;
+			}
+			return InstanceName;
+		}
+		private set;
+	}
+
 
 }
